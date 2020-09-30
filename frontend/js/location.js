@@ -1,16 +1,16 @@
-function loadAllProducts() {
-    console.log('loadAllProducts')
+function loadAllLocations() {
+    console.log('loadAllLocations')
     $.ajax({
-        url: "http://localhost:5000/products/all",
+        url: "http://localhost:5000/locations/all",
         type: "GET",
         contentType: "application/json",
     }).done(function (data) {
         console.log(data);
         if (data.length > 0) {
-            var productsListDiv = $('#productsList');
-            console.log(productsListDiv)
+            var locationsList = $('#locationsList');
+            console.log(locationsList)
             console.log('got some data');
-            $('#productsList').empty();
+            $('locationsList').empty();
             // console.log(data)
 
             for (var i = 0; i < data.length; i++) {
@@ -22,77 +22,72 @@ function loadAllProducts() {
                 // console.log(data[i]);
                 $('<div/>', {
                     text: data[i].name,
-                    class: 'productListStyle'
-                }).appendTo('#productsList');
+                    class: 'locationListStyle'
+                }).appendTo('#locationsList');
             }
 
 
         } else {
-            console.log('no products found');
+            console.log('no location found');
         }
     });
 }
 
-function getProductbyId(id) {
-    console.log('getProductbyId')
-    console.log(id);
-    $.ajax({
-        url: "http://localhost:5000/product?id=" + id,
-        type: "GET",
-        contentType: "application/json",
-    }).done(function (data) {
-        console.log(data);
-    });
-}
+// function getLocationbyId(id) {
+//     console.log('getProductbyId')
+//     console.log(id);
+//     $.ajax({
+//         url: "http://localhost:5000/product?id=" + id,
+//         type: "GET",
+//         contentType: "application/json",
+//     }).done(function (data) {
+//         console.log(data);
+//     });
+// }
 
 // ready event will be called as soon as page is loaded
 $(document).ready(function () {
     console.log("ready!");
-    loadAllProducts()
+    loadAllLocations()
 });
 
-function addProduct() {
-    console.log('addProduct');
-    var productName = $('#pName').val();
-    var productQuantity = $('#pQuantity').val();
-    console.log(productName);
-    console.log(productQuantity);
-
+function addLocation() {
+    console.log('addlocation');
+    var locationName = $('#lName').val();
+    console.log(locationName);
     // console.log(fd.getAll());
-    if (productName !== '' && productQuantity !== '') {
+    if (locationName !== '') {
         // console.log('got both');
         $('#errorInfo').text('');
         var fd = new FormData();
-        fd.append('productName', productName);
-        fd.append('quantity', productQuantity);
+        fd.append('locationName', locationName);
         $.ajax({
-            url: "http://localhost:5000/product",
+            url: "http://localhost:5000/location",
             type: "POST",
             processData: false, // important
             data: fd,
             contentType: false, // NEEDED, DON'T OMIT THIS (requires jQuery 1.6+)
         }).done(function (data) {
             console.log(data);
-            $('#pName').val('');
-            $('#pQuantity').val('');
-            loadAllProducts()
+            $('#lName').val('');
+            loadAllLocations()
         });
     } else {
         console.log('something is missing dont do the api hit');
-        $('#errorInfo').text('Enter both please');
+        $('#errorInfo').text('Enter Location name please');
     }
 }
-function deleteProduct(){
-    console.log("deleteProduct")
-    var productId = $('#pId').val()
-    console.log(productId)
-    if (productId !== '') {
+function deleteLocation(){
+    console.log("deletelocation")
+    var locationId = $('#lId').val()
+    console.log(locationId)
+    if (locationId !== '') {
         // console.log('got both');
         $('#errorInfo').text('');
         var fd = new FormData();        
-        fd.append('id', productId);
+        fd.append('id', locationId);
         $.ajax({
-            url: "http://localhost:5000/product",
+            url: "http://localhost:5000/location",
             type: "DELETE",
             processData: false, // important
             data: fd,
@@ -100,7 +95,7 @@ function deleteProduct(){
         }).done(function (data) {
             console.log(data);
             $('#pId').val('');
-            loadAllProducts()
+            loadAllLocations()
         });
     } else {
         console.log('something is missing dont do the api hit');

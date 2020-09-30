@@ -3,7 +3,7 @@
     <head>
         <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
         <script src="./js/api.js"></script>
-        <script src="./js/products.js"></script>
+        <script src="./js/location.js"></script>
         <link rel="stylesheet" href="./styles/main.css">
     </head>
 
@@ -12,35 +12,33 @@
 
      
             <div>
-              <label class="title">Product Name</label>
-              <input type="text" id="pName" name="name">
+              <label class="title">Location Name</label>
+              <input type="text" id="lName" name="name">
             </div>
-            <div>
-              <label class="title">Quantity</label>
-              <input type="text" id="pQuantity" name="quantity">
-            </div>
+            
             <div id="errorInfo"></div>
             <div>
-                <button type="button" onclick="addProduct()">Add Product</button>
+                <button type="button" onclick="addLocation()">Add Location</button>
             </div>
             
 
             <div>
-                <label class="title">Product Id</label>
-                <input type="text" id="pId" name="id">
+                <label class="title">Location Id</label>
+                <input type="text" id="lId" name="id">
             </div>      
             <div>
-                <button type="button" onclick="deleteProduct()">Delete Product</button>
+                <button type="button" onclick="deleteLocation()">Delete Location</button>
             </div>
             <div>
-                <label class="title">View all Products</label>
+                <label class="title">View all Location</label>
             </div>      
             <div>
-                <button type="button" onclick="loadAllProducts()">View all Product</button>
-                <div id="productsList">
-                    <div class="product">
+                <button type="button" onclick="loadAllLocations()">View all Locations</button>
+                <div id="locationsList">
+                    <div class="location">
+                        <div class="id"></div>
                         <div class="name"></div>
-                        <div class="quantity"></div>
+                        
                     </div>
                 </div> -->
             </div>
