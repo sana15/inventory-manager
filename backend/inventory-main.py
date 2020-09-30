@@ -87,13 +87,17 @@ def getLocationById(): #CRUD R - retrieve
     cur = mysql.connection.cursor()
     if request.args:
         req = request.args
+        print("req",req)
         locationId = req.get("id")
+        print("locationId",locationId)
         # locationId = 1
         print(locationId)
         cur.execute('''SELECT * from locations WHERE id = %s''', [locationId])
         rv = cur.fetchall()
         print("rv",rv)
         return jsonify(rv)
+    else:
+        return ("returned none")
 
 @app.route('/location',methods=["POST", "PUT", "DELETE"])
 def locationCUD(): #CRUD CUD
@@ -125,6 +129,44 @@ def locationCUD(): #CRUD CUD
         cur.execute('''DELETE FROM locations WHERE id = %s''', [locationId])
         mysql.connection.commit()
         return str("Deleted product id " + str(locationId))
+
+@app.route('/movements/all')
+
+def fetchAllMovements(): #CRUD R - retrieve
+    cur = mysql.connection.cursor()
+    cur.execute('''SELECT * from movements''')
+    rv = cur.fetchall()
+    return jsonify(rv)
+
+@app.route('/movement',methods=["POST", "DELETE"])
+
+def movementCUD(): #CRUD CUD
+    cur = mysql.connection.cursor()
+    if request.method == "POST":
+        #add product
+        req = request.form
+        movementId = req.get("movementId")
+        productId = req.get("productId")
+        fromLocation = req.get("fromLocation")
+        toLocation = req.get("toLocation")
+        quantity = req.get("quantity")
+        cur.execute('''INSERT INTO movements (id,productId,fromLocation, toLocation, quantity) VALUES (%s,%s,%s,%s,%s)''',
+         [movementId,productId, fromLocation, toLocation, quantity ])
+        # cur.execute("INSERT INTO locations name VALUES {}".format(str(locationName)))
+        mysql.connection.commit()
+        return str("Inserted " + str(movementId))
+
+    
+
+    if request.method == "DELETE":
+        #delete product
+        req = request.form
+        movementId = req.get("movementId")
+        cur.execute('''DELETE FROM movements WHERE id = %s''', [movementId])
+        mysql.connection.commit()
+        return str("Deleted product id " + str(movementId))
+
+
 
 
 
