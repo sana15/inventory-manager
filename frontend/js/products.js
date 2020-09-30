@@ -10,6 +10,7 @@ function loadAllProducts(){
             var productsListDiv = $('#productsList');
             console.log(productsListDiv)
             console.log('got some data');
+            $('#productsList').empty();
             // console.log(data)
 
             for(var i=0; i < data.length; i++){
@@ -49,3 +50,35 @@ $( document ).ready(function() {
     console.log( "ready!" );
     loadAllProducts()
 });
+
+function addProduct(){
+console.log('addProduct');
+var productName = $('#pName').val();
+var productQuantity = $('#pQuantity').val();
+console.log(productName);
+console.log(productQuantity);
+
+// console.log(fd.getAll());
+if(productName !== '' && productQuantity !== '' ){
+    // console.log('got both');
+    $('#errorInfo').text('');
+    var fd = new FormData();   
+    fd.append('productName', productName);
+    fd.append('quantity', productQuantity);
+    $.ajax({
+        url: "http://localhost:5000/product",
+        type: "POST",
+        processData: false, // important
+        data: fd,
+        contentType: false, // NEEDED, DON'T OMIT THIS (requires jQuery 1.6+)
+    }).done(function(data) {
+        console.log(data);
+        $('#pName').val('');
+        $('#pQuantity').val('');
+        loadAllProducts()
+    });
+}else{
+    console.log('something is missing dont do the api hit');
+    $('#errorInfo').text('Enter both please');
+}
+}
