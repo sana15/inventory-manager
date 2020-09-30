@@ -1,0 +1,23 @@
+mysql> 
+
+show databases
+create database inventoryMain
+use inventoryMain
+
+CREATE TABLE products
+(
+  id              INT unsigned NOT NULL AUTO_INCREMENT,
+  name            VARCHAR(150) NOT NULL,
+  PRIMARY KEY     (id) 
+);
+
+ALTER TABLE products ADD quantity INT AFTER name;
+
+CREATE TABLE locations
+(
+  id              INT unsigned NOT NULL AUTO_INCREMENT,
+  name            VARCHAR(150) NOT NULL,
+  PRIMARY KEY     (id) 
+);
+
+

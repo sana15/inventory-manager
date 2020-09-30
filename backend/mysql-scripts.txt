@@ -1,0 +1,97 @@
+mysql> 
+
+show databases
+create database inventoryMain
+use inventoryMain
+
+CREATE TABLE products
+(
+  id              INT unsigned NOT NULL AUTO_INCREMENT,
+  name            VARCHAR(150) NOT NULL,
+  PRIMARY KEY     (id) 
+);
+
+ALTER TABLE products ADD quantity INT AFTER name;
+
+CREATE TABLE locations
+(
+  id              INT unsigned NOT NULL AUTO_INCREMENT,
+  name            VARCHAR(150) NOT NULL,
+  PRIMARY KEY     (id) 
+);
+
+
+CREATE TABLE movements
+(
+  id INT unsigned NOT NULL AUTO_INCREMENT,
+  productId INT unsigned NOT NULL,
+  fromLocation INT,
+  toLocation INT,
+  quantity INT,
+  createdAt TIMESTAMP DEFAULT CURRENT_TIMESTAMP,
+  PRIMARY KEY (id),
+  FOREIGN KEY(productId) REFERENCES products(id) ON DELETE CASCADE
+);
+
+------------------
+def insertProduct(obj):
+def insertProduct(name, quantity):
+
+INSERT INTO products (name, quantity) VALUES
+  ( 'product1', 1),
+  ( 'product2', 1 ),
+  ( 'product3', 3);
+
+------------------
+
+INSERT INTO locations (name) VALUES
+  ( 'location1'),
+  ( 'location2'),
+  ( 'location3');
+
+------------------
+
+INSERT INTO movements (productId,fromLocation, toLocation, quantity) VALUES
+  (1, 1, 2, 4);
+
+------------------
+Constraint check
+INSERT INTO movements (productId,fromLocation, toLocation, quantity) VALUES
+  (4, 1, 2, 4);
+ERROR 1452 (23000): Cannot add or update a child row: a foreign key constraint fails (`inventoryMain`.`movements`, CONSTRAINT `movements_ibfk_1` FOREIGN KEY (`productId`) REFERENCES `products` (`id`) ON DELETE CASCADE)
+------------------
+
+
+
+Flask API end points:
+
+localhost:5000/
+GET request for home
+
+Product APIs
+1.
+localhost:5000/add-product
+POST request form-data
+1. productName (string)
+2. quantity (int)
+
+2.
+localhost:5000/get-all-products
+GET request to fetch all products
+
+3.
+localhost:5000/get-product/{id}
+GET request to fetch product by id
+------
+localhost:5000/add-location
+POST request form-data
+
+localhost:5000/get-all-locations
+GET request to fetch all locations
+
+------
+localhost:5000/add-movement
+POST request form-data
+
+localhost:5000/get-all-movements
+GET request to fetch all movements
