@@ -46,5 +46,9 @@ GET ```http://localhost:3000/movements/all```
 
 ![products](https://user-images.githubusercontent.com/13717573/95108915-80d72800-0759-11eb-9018-0f2faca16fed.png)
 
+## Location Page
+![location](https://user-images.githubusercontent.com/13717573/95109668-8aad5b00-075a-11eb-84a3-7875674fb359.png)
+
+
 
 
