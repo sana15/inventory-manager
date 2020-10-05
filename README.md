@@ -42,4 +42,9 @@ GET ```http://localhost:3000/movements/all```
 
 1. ```id``` : product Id, location Id, movements Id
 
+## Screenshots details
+
+![alt text](http://products.png)
+
+
 
