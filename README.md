@@ -1,12 +1,20 @@
 # inventory-manager
 ## Full stack inventory manager application using Flask, HTML & jQuery
-A RESTful Web Service built for Smartgate Project with python Python 3.8.2
+A RESTful Web Service built for Inventory management Project with python Python 3.8.2
  and Javascript
 
 ## Installation
 
 ``` pip3 install python3 ```
 will perform installation of all modules required to run the project.
+
+``` sudo apt install mysql-server  ```
+ ``` sudo mysql_secure_installation ```
+
+ for mysql run commands
+CREATE DATABASE inventoryMain;
+ mysql -u root -p inventoryMain < inventorydb.sql
+
 
 ## Running the service
 
