@@ -42,4 +42,9 @@ GET ```http://localhost:3000/movements/all```
 
 1. ```id``` : product Id, location Id, movements Id
 
+## Products Page
+
+![products](https://user-images.githubusercontent.com/13717573/95108915-80d72800-0759-11eb-9018-0f2faca16fed.png)
+
+
 
