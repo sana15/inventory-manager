@@ -1,0 +1,404 @@
+{
+	"info": {
+		"_postman_id": "02548095-c6cf-4dd4-a2cf-98220a937219",
+		"name": "inventory-apis",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "Products",
+			"item": [
+				{
+					"name": "Get All Products",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "localhost:5000/products/all",
+							"host": [
+								"localhost"
+							],
+							"port": "5000",
+							"path": [
+								"products",
+								"all"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Add a new product",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "formdata",
+							"formdata": [
+								{
+									"key": "productName",
+									"value": "prodNew2",
+									"type": "text"
+								},
+								{
+									"key": "quantity",
+									"value": "10",
+									"type": "text"
+								}
+							]
+						},
+						"url": {
+							"raw": "localhost:5000/product",
+							"host": [
+								"localhost"
+							],
+							"port": "5000",
+							"path": [
+								"product"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Update product values",
+					"request": {
+						"method": "PUT",
+						"header": [],
+						"body": {
+							"mode": "formdata",
+							"formdata": [
+								{
+									"key": "id",
+									"value": "12",
+									"type": "text"
+								},
+								{
+									"key": "productName",
+									"value": "updatedProductName",
+									"type": "text"
+								},
+								{
+									"key": "quantity",
+									"value": "9999999",
+									"type": "text"
+								}
+							]
+						},
+						"url": {
+							"raw": "localhost:5000/product",
+							"host": [
+								"localhost"
+							],
+							"port": "5000",
+							"path": [
+								"product"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Delete product",
+					"request": {
+						"method": "DELETE",
+						"header": [],
+						"body": {
+							"mode": "formdata",
+							"formdata": [
+								{
+									"key": "id",
+									"value": "1",
+									"type": "text"
+								}
+							]
+						},
+						"url": {
+							"raw": "localhost:5000/product?id",
+							"host": [
+								"localhost"
+							],
+							"port": "5000",
+							"path": [
+								"product"
+							],
+							"query": [
+								{
+									"key": "id",
+									"value": null
+								}
+							]
+						}
+					},
+					"response": []
+				}
+			],
+			"protocolProfileBehavior": {}
+		},
+		{
+			"name": "Locations",
+			"item": [
+				{
+					"name": "Post in to locations",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "formdata",
+							"formdata": [
+								{
+									"key": "locationName",
+									"value": "loca45",
+									"type": "text"
+								}
+							]
+						},
+						"url": {
+							"raw": "localhost:5000/location",
+							"host": [
+								"localhost"
+							],
+							"port": "5000",
+							"path": [
+								"location"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Get Update location by Id",
+					"request": {
+						"method": "PUT",
+						"header": [],
+						"body": {
+							"mode": "formdata",
+							"formdata": [
+								{
+									"key": "locationId",
+									"value": "7",
+									"type": "text"
+								},
+								{
+									"key": "locationName",
+									"value": "location78",
+									"type": "text"
+								},
+								{
+									"key": "asdasdasds12121212121212122",
+									"value": "asdsadadsdsad",
+									"type": "text",
+									"disabled": true
+								}
+							],
+							"options": {
+								"raw": {
+									"language": "text"
+								}
+							}
+						},
+						"url": {
+							"raw": "localhost:5000/location",
+							"host": [
+								"localhost"
+							],
+							"port": "5000",
+							"path": [
+								"location"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Delete location by Id",
+					"request": {
+						"method": "DELETE",
+						"header": [],
+						"body": {
+							"mode": "formdata",
+							"formdata": [
+								{
+									"key": "locationId",
+									"value": "7",
+									"type": "text"
+								},
+								{
+									"key": "locationName",
+									"value": "location78",
+									"type": "text",
+									"disabled": true
+								},
+								{
+									"key": "asdasdasds12121212121212122",
+									"value": "asdsadadsdsad",
+									"type": "text",
+									"disabled": true
+								}
+							],
+							"options": {
+								"raw": {
+									"language": "text"
+								}
+							}
+						},
+						"url": {
+							"raw": "localhost:5000/location",
+							"host": [
+								"localhost"
+							],
+							"port": "5000",
+							"path": [
+								"location"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Get All Locations",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"method": "GET",
+						"header": [],
+						"body": {
+							"mode": "formdata",
+							"formdata": [
+								{
+									"key": "locationName",
+									"value": "loca45",
+									"type": "text"
+								}
+							]
+						},
+						"url": {
+							"raw": "localhost:5000/locations/all",
+							"host": [
+								"localhost"
+							],
+							"port": "5000",
+							"path": [
+								"locations",
+								"all"
+							]
+						}
+					},
+					"response": []
+				}
+			],
+			"protocolProfileBehavior": {}
+		},
+		{
+			"name": "Movements",
+			"item": [
+				{
+					"name": "Add movements",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "formdata",
+							"formdata": [
+								{
+									"key": "movementId",
+									"value": "3",
+									"type": "text"
+								},
+								{
+									"key": "productId",
+									"value": "2",
+									"type": "text"
+								},
+								{
+									"key": "fromLocation",
+									"value": "",
+									"type": "text",
+									"disabled": true
+								},
+								{
+									"key": "toLocation",
+									"value": "1",
+									"type": "text"
+								},
+								{
+									"key": "quantity",
+									"value": "1",
+									"type": "text"
+								}
+							],
+							"options": {
+								"raw": {
+									"language": "text"
+								}
+							}
+						},
+						"url": {
+							"raw": "localhost:5000/movement",
+							"host": [
+								"localhost"
+							],
+							"port": "5000",
+							"path": [
+								"movement"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Get All movements",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"method": "GET",
+						"header": [],
+						"body": {
+							"mode": "formdata",
+							"formdata": [
+								{
+									"key": "id",
+									"value": "2",
+									"type": "text"
+								},
+								{
+									"key": "locationName",
+									"value": "location78",
+									"type": "text",
+									"disabled": true
+								},
+								{
+									"key": "asdasdasds12121212121212122",
+									"value": "asdsadadsdsad",
+									"type": "text",
+									"disabled": true
+								}
+							],
+							"options": {
+								"raw": {
+									"language": "text"
+								}
+							}
+						},
+						"url": {
+							"raw": "localhost:5000/movements/all",
+							"host": [
+								"localhost"
+							],
+							"port": "5000",
+							"path": [
+								"movements",
+								"all"
+							]
+						}
+					},
+					"response": []
+				}
+			],
+			"protocolProfileBehavior": {}
+		}
+	],
+	"protocolProfileBehavior": {}
+}
