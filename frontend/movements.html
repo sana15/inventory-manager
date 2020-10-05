@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+        <script src="./js/movements.js"></script>
+        <link rel="stylesheet" href="./styles/main.css">
+    </head>
+
+    <body>
+        <li><a href="index.html">Back</a></li>
+
+        <div class="form_input">
+            <div class="input_row">
+            
+              <label class="title">Product Id</label>
+              <input type="text" id="pId" name="productId">
+            </div>
+            <div class="input_row">
+                <label class="title">from Location</label>
+                <input type="text" id="fromLocation" name="fromLocation">
+              </div>
+              <div class="input_row">
+                <label class="title">to Location</label>
+                <input type="text" id="toLocation" name="toLocation">
+              </div>
+            <div class="input_row">
+              <label class="title">Quantity</label>
+              <input type="text" id="pQuantity" name="quantity">
+            </div>
+            <div class="input_row" id="errorInfo"></div>
+            <div class="input_row">
+                <button class="my_button" type="button" onclick="addMovement()">Add Movemnet</button>
+            </div>
+            
+        </div>
+
+        <div class="product_list_area">
+            <table id="product_table_heading">
+                <tr>
+                  <th>Movement Id</th>
+                  <th>Product Id</th>
+                  <th>From Location</th>
+                  <th>To Location</th>
+                  <th>quantity</th>
+                </tr>
+            </table>
+            <div class="table_wrapper">
+                <table id="movementsList">
+                </table>
+            </div>
+        </div>
+
+
+
+
+
+
+            <div>
+                <div class="input_row">
+                <label class="title">Movement Id</label>
+                <input type="text" id="MId" name="id">
+                </div>
+            </div>   
+            <div class="input_row" id="errorInfo"></div>
+   
+            <div>
+                <button class="my_button" type="button" onclick="deleteMovement()">Delete Movementt</button>
+            </div>
+                
+      
+

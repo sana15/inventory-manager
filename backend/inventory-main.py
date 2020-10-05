@@ -145,16 +145,15 @@ def movementCUD(): #CRUD CUD
     if request.method == "POST":
         #add product
         req = request.form
-        movementId = req.get("movementId")
         productId = req.get("productId")
         fromLocation = req.get("fromLocation")
         toLocation = req.get("toLocation")
         quantity = req.get("quantity")
-        cur.execute('''INSERT INTO movements (id,productId,fromLocation, toLocation, quantity) VALUES (%s,%s,%s,%s,%s)''',
-         [movementId,productId, fromLocation, toLocation, quantity ])
+        cur.execute('''INSERT INTO movements (productId,fromLocation, toLocation, quantity) VALUES (%s,%s,%s,%s)''',
+         [productId, fromLocation, toLocation, quantity ])
         # cur.execute("INSERT INTO locations name VALUES {}".format(str(locationName)))
         mysql.connection.commit()
-        return str("Inserted " + str(movementId))
+        return str("Inserted " + str(productId))
 
     
 

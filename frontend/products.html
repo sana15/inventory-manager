@@ -2,56 +2,59 @@
 <html>
     <head>
         <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
-        <script src="./js/api.js"></script>
         <script src="./js/products.js"></script>
         <link rel="stylesheet" href="./styles/main.css">
     </head>
 
     <body>
-        <li><a href="index.html">Back</a></li>
+<div class="go_back">
+    <a href="index.html">Back</a>
+</div>
 
      
-            <div>
-              <label class="title">Product Name</label>
-              <input type="text" id="pName" name="name">
-            </div>
-            <div>
-              <label class="title">Quantity</label>
-              <input type="text" id="pQuantity" name="quantity">
-            </div>
-            <div id="errorInfo"></div>
-            <div>
-                <button type="button" onclick="addProduct()">Add Product</button>
-            </div>
-            
+           <div class="form_input">
+            <div class="input_row">
+                <label class="title">Product Name</label>
+                <input type="text" id="pName" name="name">
+              </div>
+              <div class="input_row">
+                <label class="title">Quantity</label>
+                <input type="text" id="pQuantity" name="quantity">
+              </div>
+              <div class="input_row" id="errorInfo"></div>
+              <div class="input_row">
+                  <button class="my_button" type="button" onclick="addProduct()">Add Product</button>
+              </div>
+           </div>
 
+           <div class="product_list_area">
+            <table id="product_table_heading">
+                <tr>
+                  <th>Product Id</th>
+                  <th>Product Name</th>
+                  <th>Quantity</th>
+                </tr>
+            </table>
+<div class="table_wrapper">
+    <table id="productsList">
+    </table>
+</div>
+           </div>
+            
+           <div class=form_input>
             <div>
+                <div class="input_row"></div>
                 <label class="title">Product Id</label>
                 <input type="text" id="pId" name="id">
-            </div>      
-            <div>
-                <button type="button" onclick="deleteProduct()">Delete Product</button>
-            </div>
-            <div>
-                <label class="title">View all Products</label>
-            </div>      
-            <div>
-                <button type="button" onclick="loadAllProducts()">View all Product</button>
-                <div id="productsList">
-                    <div class="product">
-                        <div class="name"></div>
-                        <div class="quantity"></div>
-                    </div>
-                </div> -->
-            </div>
-   
+                </div>
+            </div>   
+                <div class="input_row" id="errorInfo"></div>
+    
+                <div class="input_row">
+                    <button class="my_button" type="button" onclick="deleteProduct()">Delete Product</button>
+                </div>
 
-        <!-- <div id="productsList">
-            <div class="product">
-                <div class="name"></div>
-                <div class="quantity"></div>
-            </div>
-        </div> --> -->
-        <!-- <button type="button" onclick="getProductbyId(3)">get by id</button>
-    </body>
-</html>
+           </div>
+
+            
+            

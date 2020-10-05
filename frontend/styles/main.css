@@ -3,3 +3,74 @@
     font-size: 15px;
     font-weight: 600;
 }
+
+
+.welcome_info{
+    text-align: center;
+}
+
+.list_item, .go_back{
+    padding: 10px;
+    font-size: 19px;
+}
+
+.form_input{
+    background: #ececec;
+    padding: 20px;
+}
+
+.input_row{
+    margin: 10px;
+}
+
+#pQuantity{
+    margin-left: 36px;
+}
+
+#errorInfo{
+    color: red;
+}
+
+.my_button{
+    height: 35px;
+    width: 105px;
+    background: #6688bb;
+    color: white;
+    font-size: 14px;
+    font-weight: 600;
+}
+
+.product_list_area{
+    margin-top: 5px;
+    background: #ececec;
+    /* max-height: 165px; */
+    /* overflow: auto; */
+}
+
+.product_id{
+    min-width: 75px;
+}
+
+.product_name{
+    min-width: 98px;
+}
+
+.table_wrapper{
+    height: 176px;
+    overflow: auto;
+}
+
+#productsList,#locationsList ,#product_table_heading,#movementsList {
+    font-family: "Trebuchet MS", Arial, Helvetica, sans-serif;
+    border-collapse: collapse;
+    width: 100%;
+  }
+  
+  #productsList td, #productsList th, #product_table_heading th {
+    border: 1px solid #ddd;
+    padding: 8px;
+  }
+  
+  #productsList tr:nth-child(even){background-color: #f2f2f2;}
+  
+  #productsList tr:hover {background-color: #ddd;}

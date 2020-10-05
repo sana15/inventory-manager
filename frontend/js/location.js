@@ -10,20 +10,15 @@ function loadAllLocations() {
             var locationsList = $('#locationsList');
             console.log(locationsList)
             console.log('got some data');
-            $('locationsList').empty();
-            // console.log(data)
-
-            for (var i = 0; i < data.length; i++) {
-                // var newProduct = $('body').find(".product").clone();
-                // $(newProduct).find(".name").append(data[i].name);
-                // $(newProduct).find(".quantity").append(data[i].quantity);
-                // $(newProduct).appendTo("#productsList");
-                // console.log(i)
-                // console.log(data[i]);
-                $('<div/>', {
-                    text: data[i].name,
-                    class: 'locationListStyle'
-                }).appendTo('#locationsList');
+            $('#locationsList').empty();
+            var reveresedLocationList = data.reverse();
+            for (var i = 0; i < reveresedLocationList.length; i++) {
+                
+                $('#locationsList').append(
+                    '<tr class="product_row"><th class="product_id">'+ 
+                    data[i].id +'</th><th class="product_name">' + 
+                    data[i].name+'</th><th class="product_quantity">'+'</th></tr>');
+                    
             }
 
 
@@ -85,7 +80,7 @@ function deleteLocation(){
         // console.log('got both');
         $('#errorInfo').text('');
         var fd = new FormData();        
-        fd.append('id', locationId);
+        fd.append('locationId', locationId);
         $.ajax({
             url: "http://localhost:5000/location",
             type: "DELETE",
@@ -94,7 +89,7 @@ function deleteLocation(){
             contentType: false, // NEEDED, DON'T OMIT THIS (requires jQuery 1.6+)
         }).done(function (data) {
             console.log(data);
-            $('#pId').val('');
+            $('#lId').val('');
             loadAllLocations()
         });
     } else {

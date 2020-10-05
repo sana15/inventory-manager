@@ -10,46 +10,47 @@
     <body>
         <li><a href="index.html">Back</a></li>
 
-     
-            <div>
-              <label class="title">Location Name</label>
-              <input type="text" id="lName" name="name">
+        <div class="form_input">
+            <div class="input_row">
+                <div>
+                <label class="title">Location Name</label>
+                <input type="text" id="lName" name="name">
+                </div>
             </div>
-            
-            <div id="errorInfo"></div>
-            <div>
-                <button type="button" onclick="addLocation()">Add Location</button>
+            <div class="input_row">
+                <div class="input_row" id="errorInfo"></div>
             </div>
-            
 
+            
             <div>
-                <label class="title">Location Id</label>
-                <input type="text" id="lId" name="id">
-            </div>      
-            <div>
-                <button type="button" onclick="deleteLocation()">Delete Location</button>
+                <button class="my_button" type="button" onclick="addLocation()">Add Location</button>
             </div>
-            <div>
-                <label class="title">View all Location</label>
-            </div>      
-            <div>
-                <button type="button" onclick="loadAllLocations()">View all Locations</button>
-                <div id="locationsList">
-                    <div class="location">
-                        <div class="id"></div>
-                        <div class="name"></div>
-                        
-                    </div>
-                </div> -->
+        </div>
+        <div class="product_list_area">
+            <table id="product_table_heading">
+                <tr>
+                  <th>Location Id</th>
+                  <th>location Name</th>
+                  
+                </tr>
+            </table>
+<div class="table_wrapper">
+    <table id="locationsList">
+    </table>
+</div>
+           </div>
+
+           <div class="form_input">
+                <div class="input_row">
+                
+                        <label class="title">Location Id</label>
+                        <input type="text" id="lId" name="id">
+                </div>      
             </div>
+            <div class="input_row" id="errorInfo"></div>
+
+            <div class="input_row">
+                <button class="my_button" type="button" onclick="deleteLocation()">Delete Location</button>
+            </div>
+            
    
-
-        <!-- <div id="productsList">
-            <div class="product">
-                <div class="name"></div>
-                <div class="quantity"></div>
-            </div>
-        </div> --> -->
-        <!-- <button type="button" onclick="getProductbyId(3)">get by id</button>
-    </body>
-</html>

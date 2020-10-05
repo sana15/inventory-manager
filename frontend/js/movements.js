@@ -1,26 +1,35 @@
-function loadAllProducts() {
-    console.log('loadAllProducts')
+function loadAllMovements() {
+    console.log('loadAllMovemnets')
     $.ajax({
-        url: "http://localhost:5000/products/all",
+        url: "http://localhost:5000/movements/all",
         type: "GET",
         contentType: "application/json",
     }).done(function (data) {
         console.log(data);
         if (data.length > 0) {
-            var productsListDiv = $('#productsList');
-            console.log(productsListDiv)
+            var movementsListDiv = $('#movementsList');
+            console.log(movementsListDiv)
             console.log('got some data');
-            $('#productsList').empty();
-            var reveresedProductList = data.reverse();
-            for (var i = 0; i < reveresedProductList.length; i++) {
-                $('#productsList').append(
+            $('#movementsList').empty();
+            // console.log(data)
+            var reveresedMovementList = data.reverse();
+
+            for (var i = 0; i < reveresedMovementList.length; i++) {
+                $('#movementsList').append(
                     '<tr class="product_row"><th class="product_id">'+ 
                     data[i].id +'</th><th class="product_name">' + 
-                    data[i].name+'</th><th class="product_quantity">'+
+                    data[i].productId+'</th><th class="product_quantity">'+
+                    data[i].fromLocation+'</th><th class="product_quantity">'+
+                    data[i].toLocation+'</th><th class="product_quantity">'+
                     data[i].quantity+'</th></tr>');
+                console.log(i)
+                // console.log(data[i]);
+                
             }
+
+
         } else {
-            console.log('no products found');
+            console.log('no movemnets found');
         }
     });
 }
@@ -40,25 +49,31 @@ function getProductbyId(id) {
 // ready event will be called as soon as page is loaded
 $(document).ready(function () {
     console.log("ready!");
-    loadAllProducts()
+    loadAllMovemnets()
 });
 
-function addProduct() {
-    console.log('addProduct');
-    var productName = $('#pName').val();
-    var productQuantity = $('#pQuantity').val();
-    console.log(productName);
-    console.log(productQuantity);
-
-    // console.log(fd.getAll());
-    if (productName !== '' && productQuantity !== '') {
+function addMovement() {
+    console.log('addMovement');
+    var productId = $('#pId').val();
+    var fromLocation = $('#fromLocation').val();
+    var toLocation = $('#toLocation').val();
+    var quantity = $("#pQuantity").val();
+    console.log(productId);
+    if (
+    productId !== '' && 
+    fromLocation !== '' &&
+    toLocation !== '' &&
+    quantity !== '' 
+    ) {
         // console.log('got both');
         $('#errorInfo').text('');
         var fd = new FormData();
-        fd.append('productName', productName);
-        fd.append('quantity', productQuantity);
+        fd.append('productId', productId);
+        fd.append('fromLocation', fromLocation)
+        fd.append('toLocation', toLocation)
+        fd.append('quantity', quantity);
         $.ajax({
-            url: "http://localhost:5000/product",
+            url: "http://localhost:5000/movement",
             type: "POST",
             processData: false, // important
             data: fd,
@@ -67,22 +82,22 @@ function addProduct() {
             console.log(data);
             $('#pName').val('');
             $('#pQuantity').val('');
-            loadAllProducts()
+            loadAllMovements()
         });
     } else {
         console.log('something is missing dont do the api hit');
-        $('#errorInfo').text('Enter both please');
+        $('#errorInfo').text('Enter Values please');
     }
 }
-function deleteProduct(){
+function deleteMovement(){
     console.log("deleteProduct")
-    var productId = $('#pId').val()
-    console.log(productId)
-    if (productId !== '') {
+    var movementId = $('#MId').val()
+    console.log(movementId)
+    if (movementId !== '') {
         // console.log('got both');
         $('#errorInfo').text('');
         var fd = new FormData();        
-        fd.append('id', productId);
+        fd.append('movementId', movementId);
         $.ajax({
             url: "http://localhost:5000/product",
             type: "DELETE",
@@ -91,8 +106,8 @@ function deleteProduct(){
             contentType: false, // NEEDED, DON'T OMIT THIS (requires jQuery 1.6+)
         }).done(function (data) {
             console.log(data);
-            $('#pId').val('');
-            loadAllProducts()
+            $('#MId').val('');
+            loadAllMovements()
         });
     } else {
         console.log('something is missing dont do the api hit');
