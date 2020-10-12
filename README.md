@@ -44,7 +44,6 @@ GET ```http://localhost:3000/movements/all```
 
 ## Screenshots details
 
-![alt text](http://products.png)
 
 
 

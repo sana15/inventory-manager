@@ -160,10 +160,10 @@ def movementCUD(): #CRUD CUD
     if request.method == "DELETE":
         #delete product
         req = request.form
-        movementId = req.get("movementId")
+        movementId = req.get("id")
         cur.execute('''DELETE FROM movements WHERE id = %s''', [movementId])
         mysql.connection.commit()
-        return str("Deleted product id " + str(movementId))
+        return str("Deleted movement id " + str(movementId))
 
 
 

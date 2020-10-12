@@ -40,6 +40,12 @@
     font-weight: 600;
 }
 
+.movement_list_area{
+    margin-top: 5px;
+    background: #ececec;
+    /* max-height: 165px; */
+    /* overflow: auto; */
+}
 .product_list_area{
     margin-top: 5px;
     background: #ececec;
@@ -60,13 +66,13 @@
     overflow: auto;
 }
 
-#productsList,#locationsList ,#product_table_heading,#movementsList {
+#productsList,#locationsList ,#product_table_heading,#movementsList, #movement_table_heading {
     font-family: "Trebuchet MS", Arial, Helvetica, sans-serif;
     border-collapse: collapse;
     width: 100%;
   }
   
-  #productsList td, #productsList th, #product_table_heading th {
+  #productsList td, #productsList th, #product_table_heading, #movement_table_heading th {
     border: 1px solid #ddd;
     padding: 8px;
   }
@@ -74,3 +80,6 @@
   #productsList tr:nth-child(even){background-color: #f2f2f2;}
   
   #productsList tr:hover {background-color: #ddd;}
+  #movementsList tr:nth-child(even){background-color: #f2f2f2;}
+  #movementsList tr:hover {background-color: #ddd;}
+

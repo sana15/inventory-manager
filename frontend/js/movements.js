@@ -18,9 +18,9 @@ function loadAllMovements() {
                 $('#movementsList').append(
                     '<tr class="product_row"><th class="product_id">'+ 
                     data[i].id +'</th><th class="product_name">' + 
-                    data[i].productId+'</th><th class="product_quantity">'+
-                    data[i].fromLocation+'</th><th class="product_quantity">'+
-                    data[i].toLocation+'</th><th class="product_quantity">'+
+                    data[i].productId+'</th><th class="product_name">'+
+                    data[i].fromLocation+'</th><th class="product_name">'+
+                    data[i].toLocation+'</th><th class="product_name">'+
                     data[i].quantity+'</th></tr>');
                 console.log(i)
                 // console.log(data[i]);
@@ -49,7 +49,7 @@ function getProductbyId(id) {
 // ready event will be called as soon as page is loaded
 $(document).ready(function () {
     console.log("ready!");
-    loadAllMovemnets()
+    loadAllMovements()
 });
 
 function addMovement() {
@@ -90,16 +90,17 @@ function addMovement() {
     }
 }
 function deleteMovement(){
-    console.log("deleteProduct")
+    console.log("deleteMovemnet")
     var movementId = $('#MId').val()
+    console.log("MOVEMENT ID")
     console.log(movementId)
     if (movementId !== '') {
         // console.log('got both');
         $('#errorInfo').text('');
         var fd = new FormData();        
-        fd.append('movementId', movementId);
+        fd.append('id', movementId);
         $.ajax({
-            url: "http://localhost:5000/product",
+            url: "http://localhost:5000/movement",
             type: "DELETE",
             processData: false, // important
             data: fd,
