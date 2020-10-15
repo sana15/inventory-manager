@@ -60,7 +60,11 @@ INSERT INTO movements (productId,fromLocation, toLocation, quantity) VALUES
   (4, 1, 2, 4);
 ERROR 1452 (23000): Cannot add or update a child row: a foreign key constraint fails (`inventoryMain`.`movements`, CONSTRAINT `movements_ibfk_1` FOREIGN KEY (`productId`) REFERENCES `products` (`id`) ON DELETE CASCADE)
 ------------------
-
+select movements.productId,products.name,locations.name, movements.quantity,products.quantity,products.quantity-movements.quantity 
+as differenece 
+from movements 
+join locations on movements.toLocation=locations.id
+join products on products.id=movements.productId;
 
 
 Flask API end points:
@@ -95,3 +99,6 @@ POST request form-data
 
 localhost:5000/get-all-movements
 GET request to fetch all movements
+
+localhost:5000/get-all-moved
+GET request to fetch all moved products and locations

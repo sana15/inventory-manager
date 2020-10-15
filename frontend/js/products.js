@@ -14,10 +14,12 @@ function loadAllProducts() {
             var reveresedProductList = data.reverse();
             for (var i = 0; i < reveresedProductList.length; i++) {
                 $('#productsList').append(
-                    '<tr class="product_row"><th class="product_id">'+ 
-                    data[i].id +'</th><th class="product_name">' + 
+                    '<tr class="product_row"><th class="product_quantity">'+ 
+                    data[i].id +'</th><th class="product_quantity">' + 
                     data[i].name+'</th><th class="product_quantity">'+
-                    data[i].quantity+'</th></tr>');
+                    data[i].quantity+'</th><th class="product_quantity">'+
+                    data[i].Mquanity+'</th><th class="product_quantity">'+
+                    data[i].difference+'</th></tr>');
             }
         } else {
             console.log('no products found');
