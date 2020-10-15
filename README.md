@@ -1,6 +1,6 @@
 # inventory-manager
 ## Full stack inventory manager application using Flask, HTML & jQuery
-A RESTful Web Service built for Inventory management Project with python Python 3.8.2
+A RESTful Web Service built for Inventory management Project with Python 3.8.2
  and Javascript
 
 ## Installation

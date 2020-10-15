@@ -1,9 +1,10 @@
 <!DOCTYPE html>
 <html>
-    <head>
-        <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
-        <link rel="stylesheet" href="./styles/main.css">
-    </head>
+  <head>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <script src="./js/index.js"></script>
+    <link rel="stylesheet" href="./styles/main.css">
+</head>
 <body>
 <div class="main_container">
 <h1 class="welcome_info">Welcome to Inventory</h1>
@@ -12,6 +13,25 @@
   <li class="list_item"><a href="products.html">Products</a></li>
   <li class="list_item"><a href="location.html">Locations</a></li>
   <li class="list_item"><a href="movements.html">Movements</a></li>
+
+  <div class="product_list_area">
+    <table id="product_table_heading">
+        <tr>
+          <th>Product Id</th>
+          <th>Product Name</th>
+          <th>Loctaion Name</th>
+          <th>Quantity Moved</th>
+          <th>Total Quantity</th>
+          <th>Quantity Remained after movements</th>
+        </tr>
+    </table>
+<div class="table_wrapper">
+<table id="locationsList">
+</table>
+</div>
+   </div>
+
+
 
 </ul>
 </div>
