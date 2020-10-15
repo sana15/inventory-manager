@@ -26,11 +26,24 @@ def argTest():
         return " ".join(f"{k}: {v} " for k, v in req.items())
     return "No query"
 
+@app.route('/get-all-moved')
+def fetchAllMovedProducts():
+    cur = mysql.connection.cursor()
+    cur.execute(''' select movements.productId,products.name,locations.name as lname, movements.quantity,products.quantity as pquantity,products.quantity-movements.quantity
+ as differenece  
+ from movements  
+ join locations on movements.toLocation=locations.id 
+ join products on products.id=movements.productId''')
+    rv = cur.fetchall()
+    return jsonify(rv)
+
 
 @app.route('/products/all')
 def fetchAllProducts(): #CRUD R - retrieve
     cur = mysql.connection.cursor()
-    cur.execute('''SELECT * from products''')
+    cur.execute('''select products.id, products.name, products.quantity, movements.quantity as Mquanity, products.quantity-movements.quantity as difference
+    from products left
+    join movements on  movements.productId = products.id ''')
     rv = cur.fetchall()
     return jsonify(rv)
 
