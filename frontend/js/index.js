@@ -15,14 +15,16 @@ function fetchAllMovedProducts() {
             for (var i = 0; i < reveresedLocationList.length; i++) {
                 
                 $('#locationsList').append(
-                    '<tr class="product_row"><th class="product_id">'+ 
-                    data[i].productId +'</th><th class="product_id">' + 
-                    data[i].name +'</th><th class="product_id">' +
-                    data[i].lname +'</th><th class="product_id">' +
-                    data[i].quantity +'</th><th class="product_id">' +
-                    data[i].pquantity +'</th><th class="product_id">' +
-                    data[i].differenece+'</th><th class="product_id">'+'</th></tr>');
+                    '<tr class="index_row"><th class="pro_id">'+ 
+                    data[i].productId +'</th><th class="pro_name">' + 
+                    data[i].name +'</th><th class="loc_name">' +
+                    data[i].lname +'</th><th class="total_qunatity">' +
+                    data[i].quantity +'</th><th class="pro_quantity">' +
+                    data[i].pquantity +'</th><th class="prod_diff">' +
+                    data[i].differenece + '</th></tr>');
+                    // data[i].differenece+'</th><th class="product_id">'+'</th></tr>');
                     
+
             }
 
 

@@ -52,6 +52,12 @@
     /* max-height: 165px; */
     /* overflow: auto; */
 }
+.index_list_area{
+    margin-top: 5px;
+    background: #ececec;
+
+}
+
 
 .product_id{
     min-width: 75px;
@@ -66,15 +72,40 @@
     overflow: auto;
 }
 
+.pro_id{
+    width: 50px;
+}
+.pro_name {
+    width: 200px;
+
+}
+.loc_name {
+    width: 100px;
+}
+.pro_quantity{
+    width: 70px;
+
+}
+.total_qunatity {
+    width: 170px;
+
+}
+.pro_quantity{
+
+    width: 100px;
+}
+
 #productsList,#locationsList ,#product_table_heading,#movementsList, #movement_table_heading {
     font-family: "Trebuchet MS", Arial, Helvetica, sans-serif;
     border-collapse: collapse;
     width: 100%;
+    
   }
   
-  #productsList td, #productsList th, #product_table_heading, #movement_table_heading th {
+  #productsList td, #productsList th, #product_table_heading, #movement_table_heading th, #locationsList th{
     border: 1px solid #ddd;
     padding: 8px;
+    
   }
   
   #productsList tr:nth-child(even){background-color: #f2f2f2;}
@@ -82,4 +113,6 @@
   #productsList tr:hover {background-color: #ddd;}
   #movementsList tr:nth-child(even){background-color: #f2f2f2;}
   #movementsList tr:hover {background-color: #ddd;}
+  #locationsList tr:nth-child(even){background-color: #f2f2f2;}
+  #locationsList tr:hover {background-color: #ddd;}
 
