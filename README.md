@@ -32,7 +32,7 @@ GET ```http://localhost:3000/products/all```
 
 GET ```http://localhost:3000/locations/all```
 
-3. Get all movemnets
+3. Get all movements
 
 GET ```http://localhost:3000/movements/all```
 
@@ -44,9 +44,10 @@ GET ```http://localhost:3000/movements/all```
 
 ## Products Page
 
-![products](https://user-images.githubusercontent.com/13717573/95108915-80d72800-0759-11eb-9018-0f2faca16fed.png)
+![products](https://user-images.githubusercontent.com/13717573/96088345-edcd8900-0ee2-11eb-876c-e2bfb5039e5c.png)
 
 ## Location Page
+
 ![location](https://user-images.githubusercontent.com/13717573/95109668-8aad5b00-075a-11eb-84a3-7875674fb359.png)
 
 ## Movements Page
